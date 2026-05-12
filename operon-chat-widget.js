@@ -1,4 +1,4 @@
-(() => {
+window.addEventListener("DOMContentLoaded", () => {
   const VAPI_PUBLIC_KEY = "c36946f6-b963-4a3d-ae7d-9e9fde92ab24";
   const ASSISTANT_ID = "5eff3889-6f97-4f77-9c23-a61507346a11";
   let previousChatId = null;
@@ -123,4 +123,4 @@
       addMsg("Sorry — chat is unavailable right now.", "bot");
     }
   };
-})();
+});
