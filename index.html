@@ -1035,5 +1035,22 @@ function toggleFaq(el){
   if(!isOpen) el.classList.add('open');
 }
 </script>
+  <script
+  src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"
+  defer
+  async
+></script>
+
+<script>
+  window.addEventListener("load", () => {
+    window.vapiSDK.run({
+      apiKey: "c36946f6-b963-4a3d-ae7d-9e9fde92ab24",
+      assistant: "5eff3889-6f97-4f77-9c23-a61507346a11",
+      config: {
+        position: "bottom-right"
+      }
+    });
+  });
+</script>
 </body>
 </html>
