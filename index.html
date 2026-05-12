@@ -949,60 +949,6 @@ function toggleFaq(el){
   document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
   if(!isOpen) el.classList.add('open');
 }
-</script>
-
-<!-- ══════════════════════════════════════════
-     VAPI VOICE CHAT WIDGET
-══════════════════════════════════════════ -->
-  <!-- Vapi widget positioning fix -->
-<style>
-  vapi-button, [class*="vapi"], [id*="vapi"] {
-    position: fixed !important;
-    bottom: 24px !important;
-    right: 24px !important;
-    z-index: 999999 !important;
-  }
-</style>
-<script>
-  // Force Vapi widget to stay fixed regardless of page CSS
-  const vapiObserver = new MutationObserver(() => {
-    const el = document.querySelector('[class*="vapi"], [id*="vapi"], vapi-button');
-    if (el) {
-      const target = el.closest('body > div') || el;
-      target.style.setProperty('position', 'fixed', 'important');
-      target.style.setProperty('bottom', '24px', 'important');
-      target.style.setProperty('right', '24px', 'important');
-      target.style.setProperty('z-index', '999999', 'important');
-      vapiObserver.disconnect();
-    }
-  });
-  vapiObserver.observe(document.body, { childList: true, subtree: true });
-</script>
-<!-- Vapi widget positioning fix -->
-<style>
-  vapi-button, [class*="vapi"], [id*="vapi"] {
-    position: fixed !important;
-    bottom: 24px !important;
-    right: 24px !important;
-    z-index: 999999 !important;
-  }
-</style>
-
-<script
-  src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"
-  defer
-  async
-></script>
-
-<script>
-  window.addEventListener("load", () => {
-    window.vapiSDK.run({
-      apiKey: "c36946f6-b963-4a3d-ae7d-9e9fde92ab24",
-      assistant: "5eff3889-6f97-4f77-9c23-a61507346a11",
-      config: { position: "bottom-right" }
-    });
-  });
-</script>
 
 </body>
 </html>
