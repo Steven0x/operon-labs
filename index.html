@@ -954,6 +954,30 @@ function toggleFaq(el){
 <!-- ══════════════════════════════════════════
      VAPI VOICE CHAT WIDGET
 ══════════════════════════════════════════ -->
+  <!-- Vapi widget positioning fix -->
+<style>
+  vapi-button, [class*="vapi"], [id*="vapi"] {
+    position: fixed !important;
+    bottom: 24px !important;
+    right: 24px !important;
+    z-index: 999999 !important;
+  }
+</style>
+<script>
+  // Force Vapi widget to stay fixed regardless of page CSS
+  const vapiObserver = new MutationObserver(() => {
+    const el = document.querySelector('[class*="vapi"], [id*="vapi"], vapi-button');
+    if (el) {
+      const target = el.closest('body > div') || el;
+      target.style.setProperty('position', 'fixed', 'important');
+      target.style.setProperty('bottom', '24px', 'important');
+      target.style.setProperty('right', '24px', 'important');
+      target.style.setProperty('z-index', '999999', 'important');
+      vapiObserver.disconnect();
+    }
+  });
+  vapiObserver.observe(document.body, { childList: true, subtree: true });
+</script>
 <script
   src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js"
   defer
